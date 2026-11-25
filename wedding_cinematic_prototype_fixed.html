@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17100f"><title>A Wedding Invitation — Cinematic Preview</title>
+<style>
+:root{--ink:#2b201b;--gold:#c5a36b;--cream:#f3eadb;--wine:#38151b;--muted:#76685c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#17100f;color:var(--cream);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}.screen{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;padding:28px 18px}.intro{background:radial-gradient(ellipse at 50% 55%,#63402d 0,#281a17 45%,#100c0b 100%)}
+.stage{position:absolute;inset:0;pointer-events:none;z-index:3;perspective:1000px}.curtain{position:absolute;top:-2%;height:104%;width:52%;background:repeating-linear-gradient(90deg,#260b12 0 9px,#4b1722 16px,#6a2630 25px,#351019 37px);box-shadow:inset -18px 0 28px #16090c, inset 0 0 50px #17080d,0 0 35px #080506}.curtain:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#12080c88,transparent 25%,#17080c55 70%,#12080caa)}.left{left:0;border-radius:0 0 45% 0;transform-origin:left center;animation:openLeft 4.8s cubic-bezier(.7,0,.2,1) forwards}.right{right:0;border-radius:0 0 0 45%;transform-origin:right center;animation:openRight 4.8s cubic-bezier(.7,0,.2,1) forwards}.valance{position:absolute;top:-3%;left:-2%;width:104%;height:17%;z-index:4;background:radial-gradient(ellipse at 50% 0,#8a3a43 0,#4b1722 48%,#210b11 78%);border-radius:0 0 50% 50%;box-shadow:0 12px 25px #090506;animation:valanceLift 4.8s ease forwards}.intro-copy{position:relative;z-index:2;text-align:center;max-width:720px;opacity:0;transform:translateY(18px);animation:emerge 2.2s ease 4.5s forwards}.eyebrow{letter-spacing:.32em;text-transform:uppercase;font:10px/1.8 Arial,sans-serif;color:#e2c998}.intro h1{font-size:clamp(34px,7vw,72px);font-weight:400;line-height:1.08;margin:18px 0;color:#f6ead7;text-shadow:0 4px 24px #160b08}.intro .sub{font-size:clamp(14px,2.5vw,19px);letter-spacing:.12em;color:#e0c9a5}.ornament{color:var(--gold);font-size:22px;margin:20px 0}.scroll-hint{position:absolute;bottom:25px;z-index:2;font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#d8c4a4;opacity:0;animation:emerge 1s ease 6.2s forwards}
+.reveal{background:radial-gradient(ellipse at 50% 30%,#f8f0e3,#e9dcc8 70%,#d7c4a8);color:var(--ink);padding:70px 18px}.paper{width:min(620px,100%);text-align:center;position:relative;padding:clamp(30px,7vw,62px) clamp(20px,7vw,65px);border:1px solid #b79a6d;background:linear-gradient(145deg,#f7f0e4,#eee2cf);box-shadow:0 20px 65px #4a332322;overflow:hidden}.paper:before,.paper:after{content:"✧";position:absolute;color:#b79865;font-size:26px}.paper:before{top:15px;left:18px}.paper:after{bottom:15px;right:18px}.smallcaps{font:10px Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#92784f}.paper h2{font-size:clamp(28px,6vw,46px);font-weight:400;line-height:1.12;margin:18px 0 12px}.paper p{color:#76685c;line-height:1.7;font-size:15px}.scratch-wrap{position:relative;margin:30px auto 0;width:min(430px,100%);height:190px;border:1px solid #b79a6d;touch-action:pan-y;overflow:hidden;background:#e9dcc7}.under{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px;background:linear-gradient(135deg,#f5ead7,#e8d4b5);color:#39271d;text-align:center}.under .date{font-size:clamp(31px,7vw,48px);margin:7px 0}.under .venue{font:11px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#80633e}.under .hint{font:10px Arial,sans-serif;letter-spacing:.12em;color:#8b7863;margin-top:10px}.scratch-fallback{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,#54232b,#7c3940 50%,#3c1820)}canvas{position:absolute;inset:0;z-index:3;display:block;width:100%;height:100%;cursor:crosshair;touch-action:none;pointer-events:auto}.scratch-label{z-index:4;display:grid;place-items:center;line-height:1.6;background:transparent}.scratch-label span{display:block;font:24px Georgia,serif;letter-spacing:.02em;margin:0 0 6px}.scratch-label{position:absolute;inset:0;display:grid;place-items:center;color:#f5e8d3;text-align:center;pointer-events:none;text-shadow:0 2px 8px #2b1111;font:11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;padding:20px}.scratch-label span{display:block;font:28px Georgia,serif;letter-spacing:.04em;margin-bottom:8px}.petal{position:fixed;top:-35px;z-index:20;pointer-events:none;width:12px;height:19px;border-radius:80% 10% 80% 10%;background:linear-gradient(135deg,#f3c9c7,#bd7379);opacity:.88;animation:fall linear forwards;filter:drop-shadow(0 2px 2px #70404a44)}@keyframes openLeft{to{transform:translateX(-94%) rotateY(14deg)}}@keyframes openRight{to{transform:translateX(94%) rotateY(-14deg)}}@keyframes valanceLift{to{transform:translateY(-120%);opacity:.3}}@keyframes emerge{to{opacity:1;transform:translateY(0)}}@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));opacity:.15}}
+.details{background:#f0e5d4;color:var(--ink);padding:55px 20px 70px}.details-inner{width:min(760px,100%);margin:auto;text-align:center}.details h3{font-size:clamp(25px,5vw,38px);font-weight:400;margin:10px 0 30px}.event{padding:22px 0;border-top:1px solid #cdbb9e}.event:last-child{border-bottom:1px solid #cdbb9e}.event h4{font-weight:400;font-size:23px;margin:7px}.event p{font:12px/1.8 Arial,sans-serif;color:#76685c}.event a{display:inline-block;margin-top:8px;color:#73542c;font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #b79a6d;padding-bottom:4px}.foot{font:10px Arial,sans-serif;letter-spacing:.16em;color:#8a765e;margin-top:32px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style></head><body>
+<section class="screen intro" aria-label="Opening curtain scene"><div class="intro-copy"><div class="eyebrow">A celebration of love and togetherness</div><div class="ornament">✧ ❧ ✧</div><h1>A beautiful beginning</h1><div class="sub">Two places · One celebration</div><div class="ornament">✦</div></div><div class="stage" aria-hidden="true"><div class="curtain left"></div><div class="curtain right"></div><div class="valance"></div></div><div class="scroll-hint">Scroll to discover the invitation ↓</div></section>
+<section class="screen reveal" aria-label="Scratch to reveal invitation"><div class="paper"><div class="smallcaps">With joy in our hearts</div><h2>You are warmly invited</h2><p>A celebration bringing together the coast of Mangalore and the royal spirit of Rajasthan.</p><div class="ornament">✧</div><div class="smallcaps">A little surprise awaits</div><div class="scratch-wrap" id="scratchWrap"><div class="under"><div class="venue">The wedding celebration</div><div class="date">20 January 2027</div><div class="venue">Palemar Garden · Mangalore</div><div class="hint">The date and venue are revealed</div></div><div class="scratch-fallback" aria-hidden="true"></div><canvas id="scratchCanvas" aria-label="Scratch this panel to reveal the wedding date"></canvas><div class="scratch-label" id="scratchLabel"><div><span>Scratch to reveal</span>Use your finger or mouse</div></div></div><p style="font-size:12px;margin-top:20px">May your presence make our celebration even more special.</p></div></section>
+<section class="details"><div class="details-inner"><div class="smallcaps">Celebrations</div><h3>Join us for the festivities</h3><div class="event"><div class="smallcaps">18 January 2027</div><h4>Mehndi</h4><p>Hidden Heaven Resort<br>Mangalore, Karnataka</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hidden+Heaven+Resort+Mangalore">Open location in Google Maps ↗</a></div><div class="event"><div class="smallcaps">20 January 2027</div><h4>Wedding</h4><p>Palemar Garden<br>Mangalore, Karnataka</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Palemar+Garden+Mangalore">Open location in Google Maps ↗</a></div><div class="foot">WITH LOVE · MANGALORE & RAJASTHAN</div></div></section>
+<script>
+(()=>{
+  const canvas = document.getElementById('scratchCanvas');
+  const wrap = document.getElementById('scratchWrap');
+  const label = document.getElementById('scratchLabel');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+  let drawing = false;
+  let revealed = false;
+  let last = null;
+  let scratchedDistance = 0;
+  const radius = 27;
+
+  function paintCover() {
+    const rect = wrap.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.max(1, Math.round(rect.width * dpr));
+    canvas.height = Math.max(1, Math.round(rect.height * dpr));
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.globalCompositeOperation = 'source-over';
+    const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+    gradient.addColorStop(0, '#54232b');
+    gradient.addColorStop(.5, '#7c3940');
+    gradient.addColorStop(1, '#3c1820');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, rect.width, rect.height);
+
+    // Fine gold flecks on the removable cover.
+    ctx.fillStyle = 'rgba(232,202,157,.28)';
+    for (let i = 0; i < 110; i++) {
+      ctx.fillRect(Math.random() * rect.width, Math.random() * rect.height, 1.3, 1.3);
+    }
+    ctx.globalCompositeOperation = 'destination-out';
+    label.style.opacity = '1';
+  }
+
+  function getPoint(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+
+  function erase(point) {
+    if (!drawing || revealed) return;
+
+    ctx.save();
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = radius * 2;
+
+    if (last) {
+      const dx = point.x - last.x;
+      const dy = point.y - last.y;
+      scratchedDistance += Math.hypot(dx, dy);
+      ctx.beginPath();
+      ctx.moveTo(last.x, last.y);
+      ctx.lineTo(point.x, point.y);
+      ctx.stroke();
+    }
+
+    // Dab at every event so slow finger movements also erase reliably.
+    ctx.beginPath();
+    ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    last = point;
+    label.style.opacity = '.22';
+
+    // Distance-based fallback avoids relying on canvas pixel-read support
+    // in embedded iOS previews.
+    const width = wrap.getBoundingClientRect().width;
+    if (scratchedDistance >= width * 1.45) reveal();
+  }
+
+  function begin(clientX, clientY) {
+    if (revealed) return;
+    drawing = true;
+    last = null;
+    erase(getPoint(clientX, clientY));
+  }
+
+  function move(clientX, clientY) {
+    if (!drawing || revealed) return;
+    erase(getPoint(clientX, clientY));
+  }
+
+  function end() {
+    if (!drawing) return;
+    drawing = false;
+    last = null;
+    checkErasedArea();
+  }
+
+  function checkErasedArea() {
+    if (revealed) return;
+    try {
+      const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      let clear = 0, sampled = 0;
+      for (let i = 3; i < pixels.length; i += 32) {
+        sampled++;
+        if (pixels[i] < 40) clear++;
+      }
+      if (sampled && clear / sampled >= .27) reveal();
+    } catch (_) {
+      // Distance-based reveal remains active if pixel inspection is unavailable.
+    }
+  }
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    drawing = false;
+    canvas.style.transition = 'opacity .65s ease';
+    canvas.style.opacity = '0';
+    label.style.transition = 'opacity .25s ease';
+    label.style.opacity = '0';
+    window.setTimeout(() => {
+      canvas.style.display = 'none';
+      label.style.display = 'none';
+    }, 700);
+    dropPetals(42);
+  }
+
+  function dropPetals(count) {
+    for (let i = 0; i < count; i++) {
+      const petal = document.createElement('i');
+      petal.className = 'petal';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.setProperty('--drift', (Math.random() * 180 - 90) + 'px');
+      petal.style.setProperty('--spin', (Math.random() * 800 - 400) + 'deg');
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      petal.style.animationDelay = (Math.random() * .8) + 's';
+      document.body.appendChild(petal);
+      window.setTimeout(() => petal.remove(), 12000);
+    }
+  }
+
+  // Mouse/pen use Pointer Events. Touch uses Touch Events separately to
+  // avoid duplicate strokes in iOS webviews that dispatch both event types.
+  canvas.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'touch') return;
+    e.preventDefault();
+    begin(e.clientX, e.clientY);
+  });
+  canvas.addEventListener('pointermove', e => {
+    if (e.pointerType === 'touch') return;
+    if (!drawing) return;
+    e.preventDefault();
+    move(e.clientX, e.clientY);
+  });
+  canvas.addEventListener('pointerup', e => {
+    if (e.pointerType !== 'touch') end();
+  });
+  canvas.addEventListener('pointercancel', e => {
+    if (e.pointerType !== 'touch') end();
+  });
+
+  canvas.addEventListener('touchstart', e => {
+    if (revealed) return;
+    e.preventDefault();
+    const t = e.changedTouches[0];
+    begin(t.clientX, t.clientY);
+  }, { passive: false });
+
+  canvas.addEventListener('touchmove', e => {
+    if (!drawing || revealed) return;
+    e.preventDefault();
+    const t = e.changedTouches[0];
+    move(t.clientX, t.clientY);
+  }, { passive: false });
+
+  canvas.addEventListener('touchend', end, { passive: false });
+  canvas.addEventListener('touchcancel', end, { passive: false });
+
+  window.addEventListener('resize', () => {
+    if (!revealed) {
+      scratchedDistance = 0;
+      paintCover();
+    }
+  });
+
+  paintCover();
+})();
+</script></body></html>
